@@ -40,9 +40,15 @@ This is a simple calendar application written in C++ that allows the user to dis
    calendar.exe
    ```
 
-## How to Contribute
+4. Command to run the auto containerize script:
 
-If you want to contribute to this project, feel free to fork it and submit a pull request with any improvements or new features.
+   ```
+   python3 auto_containerize_cpp.py
+   ```
+5. Run the docker image with the following command:
 
+   ```
+   docker run -it cpp-calendar-app
+   ```
 
 
