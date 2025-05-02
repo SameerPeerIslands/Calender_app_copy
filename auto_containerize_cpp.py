@@ -15,7 +15,19 @@ DOCKER_IMAGE_NAME = "cpp-calendar-app"
 EXECUTABLE_NAME = "calendar"
 
 # 🔍 Function to recursively identify all C++ source files in the project
-def identify_cpp_files(base_dir="."):
+def identify_cpp_files(base_dir="app-1-calendar"):
+    """
+    Recursively identifies all C++ source files in the specified directory.
+    
+    Parameters:
+        base_dir (str): Directory to search for C++ files. 
+                        Examples: "app-1-calender", "app-2-calculator"
+                        To use a different app directory, change this parameter or
+                        call the script with a command-line argument.
+    
+    Returns:
+        list: List of C++ file paths relative to the base directory
+    """
     # Supported C++ source file extensions
     cpp_extensions = (".cpp", ".cc", ".cxx", ".C")
     cpp_files = []
@@ -25,7 +37,7 @@ def identify_cpp_files(base_dir="."):
         for file in files:
             if file.endswith(cpp_extensions):
                 # Store the path relative to the base directory (required for Makefile)
-                relative_path = os.path.relpath(os.path.join(root, file), base_dir)
+                relative_path = os.path.join(root, file)
                 cpp_files.append(relative_path)
 
     return cpp_files

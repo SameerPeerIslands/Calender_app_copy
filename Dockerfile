@@ -1,11 +1,10 @@
-FROM ubuntu:22.04
-
-RUN apt-get update && apt-get install -y g++ build-essential
-
+FROM gcc:latest
+# Use official GCC compiler image
 WORKDIR /app
-
-COPY main.cpp .
-
-RUN g++ -std=c++11 -o calendar main.cpp
-
+# Set working directory in container
+COPY . ./
+# Copy all local files into the container
+RUN make
+# Build the C++ project using the Makefile
 CMD ["./calendar"]
+# Command to run the app when container starts

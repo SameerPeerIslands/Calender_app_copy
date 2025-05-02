@@ -45,6 +45,20 @@ This is a simple calendar application written in C++ that allows the user to dis
    ```
    python3 auto_containerize_cpp.py
    ```
+   
+   To use a application directory:
+   
+   ```
+   # Edit the auto_containerize_cpp.py file and change the base_dir parameter in identify_cpp_files function
+   # For example, to use the calendar application:
+   def identify_cpp_files(base_dir="app-1-calender"):
+   
+   # Or to use the calculator application:
+   def identify_cpp_files(base_dir="app-2-calculator"):
+   ```
+   
+   Alternatively, you can modify the script to accept command-line arguments for more flexibility.
+
 5. Run the docker image with the following command:
 
    ```
