@@ -69,11 +69,16 @@ def build_cpp_project():
 def generate_dockerfile():
     # Dockerfile contents
     dockerfile_content = f"""\
-FROM gcc:latest             # Use official GCC compiler image
-WORKDIR /app                # Set working directory in container
-COPY . .                    # Copy all local files into the container
-RUN make                    # Build the C++ project using the Makefile
-CMD ["./{EXECUTABLE_NAME}"] # Command to run the app when container starts
+FROM gcc:latest
+# Use official GCC compiler image
+WORKDIR /app
+# Set working directory in container
+COPY . ./
+# Copy all local files into the container
+RUN make
+# Build the C++ project using the Makefile
+CMD ["./{EXECUTABLE_NAME}"]
+# Command to run the app when container starts
 """
     # Write the Dockerfile to disk
     with open("Dockerfile", "w") as f:
