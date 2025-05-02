@@ -3,7 +3,6 @@
 #include <string>
 #include <map>
 using namespace std;
-//Identify the CI process2
 // Function declarations
 void PrintMonth(int year, int month, map<int, string> tasks);
 void PrintMonthTitle(int year, int month);
